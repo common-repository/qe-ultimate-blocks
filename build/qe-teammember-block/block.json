@@ -1,0 +1,74 @@
+{
+  "apiVersion": 2,
+  "name": "qe-block/qe-team-members",
+  "title": "QE Team Members",
+  "category": "qeblocks",
+  "icon": "groups",
+  "description": "A team members grid.",
+  "keywords": [
+    "Team",
+    "Members",
+    "Grid"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide"
+    ]
+  },
+  "textdomain": "qe-team-members",
+  "editorScript": "file:index.js",
+  "editorStyle": "file:index.css",
+  "style": "file:style-index.css",
+  "attributes": {
+    "columns": {
+      "type": "number",
+      "default": 2
+    }
+  },
+  "example": {
+    "attributes": {
+      "columns": 2
+    },
+    "innerBlocks": [
+      {
+        "name": "qe-block/qe-team-member",
+        "attributes": {
+          "name": "Qewebby",
+          "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam neque nibh, tincidunt ut facilisis vitae, ullamcorper sit amet lectus. Proin porta vulputate purus.",
+          "url": "https://picsum.photos/id/1012/300/200",
+          "socialLinks": [
+            {
+              "icon": "facebook"
+            },
+            {
+              "icon": "twitter"
+            },
+            {
+              "icon": "instagram"
+            }
+          ]
+        }
+      },
+      {
+        "name": "qe-block/qe-team-member",
+        "attributes": {
+          "name": "Qewebby 111",
+          "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam neque nibh, tincidunt ut facilisis vitae, ullamcorper sit amet lectus. Proin porta vulputate purus.",
+          "url": "https://picsum.photos/id/1011/300/200",
+          "socialLinks": [
+            {
+              "icon": "facebook"
+            },
+            {
+              "icon": "twitter"
+            },
+            {
+              "icon": "instagram"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,364 @@
+.wp-block-qe-block-qe-team-members{
+	display: block;
+	@for $i from 1 through 6 {
+		&.has-#{$i}-columns {
+			> .block-editor-inner-blocks > .block-editor-block-list__layout > [data-type="qe-block/qe-team-member"]{
+				width: calc(100% / #{$i} - 20px);
+			}
+		}
+
+		@if $i == 2 {
+			&.has-#{$i}-columns {
+				> .block-editor-inner-blocks > .block-editor-block-list__layout > [data-type="qe-block/qe-team-member"]{
+					@media (max-width:767px) {
+						width: calc(100% - 20px);
+					}
+				}
+			}
+		}
+		@else if $i == 3 {
+			&.has-#{$i}-columns {
+				> .block-editor-inner-blocks > .block-editor-block-list__layout > [data-type="qe-block/qe-team-member"]{
+
+					@media (max-width:1024px) {
+						width: calc(50% - 20px);
+					}
+					@media (max-width:767px) {
+						width: calc(100% - 20px);
+					}
+
+					.qe-team-social{
+						bottom: 0;
+					}
+
+					.block-editor-block-list__block:hover{
+						.qe-team-social{
+							bottom: 30px !important;
+						}	
+					}
+
+				}
+			}
+		}
+		@else if $i == 4 {
+			&.has-#{$i}-columns {
+				> .block-editor-inner-blocks > .block-editor-block-list__layout > [data-type="qe-block/qe-team-member"]{
+					@media (max-width:1024px) {
+						width: calc(50% - 20px);
+					}
+					@media (max-width:767px) {
+						width: calc(100% - 20px);
+					}
+
+					@media (min-width:1025px){
+						.qe-team-social{
+							bottom: 0;
+						}
+	
+						.block-editor-block-list__block:hover{
+							.qe-team-social{
+								bottom: 10px !important;
+
+								.wp-block-qe-block-qe-team-member-social-links {
+									ul{
+										li{
+											a{
+												font-size: 20px;
+											}
+										}
+									}
+								}
+							}	
+						}
+					}
+				}
+			}
+		}
+		@else if $i == 5 {
+			&.has-#{$i}-columns {
+				> .block-editor-inner-blocks > .block-editor-block-list__layout > [data-type="qe-block/qe-team-member"]{
+					@media (max-width:1024px) {
+						width: calc(50% - 20px);
+					}
+					@media (max-width:767px) {
+						width: calc(100% - 20px);
+					}
+
+					
+					.qe-team-social{
+						bottom: 0;
+					}
+
+					&:hover{
+						.qe-team-social{
+							bottom: 30px;
+						}	
+					}
+				}
+			}
+		}
+		@else if $i == 6 {
+			&.has-#{$i}-columns {
+				> .block-editor-inner-blocks > .block-editor-block-list__layout > [data-type="qe-block/qe-team-member"]{
+					@media (max-width:1024px) {
+						width: calc(50% - 20px);
+					}
+					@media (max-width:767px) {
+						width: calc(100% - 20px);
+					}
+
+					
+					.qe-team-social{
+						bottom: 0;
+					}
+
+					&:hover{
+						.qe-team-social{
+							bottom: 30px;
+						}	
+					}
+				}
+			}
+		}
+	}
+	> .block-editor-inner-blocks > .block-editor-block-list__layout {
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: -10px;
+		margin-right: -10px;
+		[data-type="qe-block/qe-team-member"] {
+			max-width: none;
+			margin: 0;
+		}
+		> [data-type="qe-block/qe-team-member"] {
+			margin: 10px;
+			position: relative;
+
+			.block-editor-block-list__block:not(.empty-block){
+				position: relative;
+				width: var(--width);
+				height: var(--height);
+				max-width: 100%;
+
+				// &.qe-team-member{
+				// 	&--medium{
+				// 		max-width: 90%;
+				// 	}
+				// 	&--thumbnail{
+				// 		max-width: 80%;
+				// 	}
+				// 	&--full{
+				// 		max-width: 100%;
+				// 	}
+				// }
+				&::before{
+					content: "";
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					z-index: 1;
+					background:linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.80) 100%);
+				}
+			
+			
+
+				.block-editor-media-placeholder {
+					margin-bottom: 20px;
+				}
+				.wp-block-qe-block-qe-team-member-img {
+					position: relative;
+					margin-bottom: 0;
+					&.is-loading img {
+						opacity: 0.3;
+					}
+					.components-spineer {
+						position: absolute;
+						left: 0;
+						right: 0;
+						top: 0;
+						bottom: 0;
+						margin: auto;
+					}
+
+					&.qe-team-photo{
+						position: relative;
+						width: 100%;
+						height: 100%;
+			
+						&::before{
+							content: "";
+							display: block;
+							padding-top: 100%;
+						}
+			
+						&::after{
+							content: "";
+							position: absolute;
+							top: 100%;
+							left: 0;
+							right: 0;
+							bottom: 0;
+							background-color: var(--wc-primary);
+							opacity: 0.9;
+							transition: all 0.2s ease-in-out;
+							z-index: 2;
+						}
+			
+						img {
+							position: absolute;
+							top: 0;
+							left: 0;
+							right: 0;
+							bottom: 0;
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+						}
+					}
+				}
+
+				
+				.qe-team-detail{
+					position: absolute;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					text-align: center;
+					z-index: 3;
+					display: flex;
+					flex-direction: column;
+					padding: 15px 15px;
+					transition: all 0.2s ease-in-out;
+		
+					h4{
+						color: #fff;	
+						text-transform: uppercase;
+						font-size: 16px;
+						line-height: 1.1em;
+						font-weight: 600;
+						margin-bottom: 3px;
+						margin-top: 0;
+					}
+					p{
+						font-size: 14px;
+						color: rgba(255,255,255,0.8);
+						margin: 0;
+						line-height: 1.1em;
+						text-transform: uppercase;
+						opacity: 0;
+						transition: all 0.2s ease-in-out;
+					}
+				}
+
+				.wp-block-qe-block-qe-team-member-social-links {
+					ul {
+						
+						li{
+							
+							button {
+								background: none;
+								border: none;
+								padding: 0;
+								cursor: pointer;
+								margin: 0;
+							}
+							&.wp-block-qe-block-qe-team-member-add-icon-li {
+								button {
+									outline: 1px dashed;
+								}
+							}
+						}
+					}
+				}
+
+				.qe-team-social{
+					position: absolute;
+					bottom: 3px;
+					left: 0;
+					right: 0;
+					transition: all 0.2s ease-in-out;
+					opacity: 0;
+					z-index: 9;
+					pointer-events: none;
+		
+					.wp-block-qe-block-qe-team-member-social-links {
+						
+						ul{
+							list-style: none;
+							padding: 0;
+							margin: 0 ;
+							display: flex;
+							justify-content: center;
+							grid-gap: 20px;
+							li{
+								display: inline-flex;
+								line-height: 1em;
+								a{
+									text-decoration: none;
+									font-size: 25px;
+									display: inline-flex;
+									line-height: 1em;
+								}
+								span.dashicon {
+									color: #fff;
+									font-size: inherit;
+									line-height: 1em;
+								}
+							}
+						}
+					}
+				}
+
+				.wp-block-qe-block-qe-team-member-link-form {
+					background: #fff;
+					border: 1px solid;
+					padding: 10px;
+					margin-top: 10px;
+					position: relative;
+					z-index: 1111;
+				}
+
+				&:hover{
+					.qe-team-detail{
+						bottom: 50%;
+						transform: translateY(50%);
+		
+						p{
+							opacity: 1;
+						}
+					}
+		
+					.qe-team-photo{
+						&::after{
+							top: 0;
+						}				
+					}
+		
+					.qe-team-social{
+						bottom: 40px;
+						opacity: 1;
+						pointer-events: all;
+					}
+				}
+			}	
+			.wp-block-qe-block-qe-team-member-social-links {
+				ul{
+					list-style: none;
+					padding: 0;
+					margin: 0 0 20px;
+					display: flex;
+					justify-content: flex-start;
+					grid-gap: 10px;
+					flex-wrap: wrap;
+				}
+			}
+		}
+	}
+}
+
+button.components-button.active {
+	background-color: #f5f5f5;
+	font-weight: 600;
+}

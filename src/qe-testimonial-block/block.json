@@ -1,0 +1,48 @@
+{
+	"apiVersion": 2,
+	"name": "qe-block/qe-testimonial-block",
+	"title": "QE Testimonial",
+	"category": "qeblocks",
+	"icon": "format-status",
+	"description": "Qe Testimonial blocks.",
+	"keywords": ["testimonial"],
+	"supports": {
+		"html": false,
+		"align": ["wide", "full"]
+	},
+	"textdomain": "qe-testimonial-block",
+	"editorScript": "file:index.js",
+	"editorStyle": "file:index.css",
+	"style": "file:style-index.css",
+	"attributes": {
+		"columns": {
+			"type": "number",
+			"default": 2
+		}
+	},
+	"example": {
+		"attributes": {
+			"columns": 2
+		},
+		"innerBlocks": [
+			{
+				"name": "qe-block/qe-testimonial-blocks",
+				"attributes": {
+					"author_name": "Qewebby",
+					"content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam neque nibh, tincidunt ut facilisis vitae, ullamcorper sit amet lectus. Proin porta vulputate purus.",
+					"url": "https://picsum.photos/id/1012/300/200",
+					"designation": "HR"
+				}
+			},
+			{
+				"name": "qe-block/qe-testimonial-blocks",
+				"attributes": {
+					"author_name": "Qewebby 111",
+					"content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam neque nibh, tincidunt ut facilisis vitae, ullamcorper sit amet lectus. Proin porta vulputate purus.",
+					"url": "https://picsum.photos/id/1011/300/200",
+					"designation": "Manager"
+				}
+			}
+		]
+	}
+}
